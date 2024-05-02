@@ -110,8 +110,8 @@ def get_value(val, my_dict):
             return value
 
 
-@st.cache_data  # -> this is for local host used
-# @st.cache  # -> this is for deploy used
+# @st.cache_data  # -> this is for local host used
+@st.cache  # -> this is for deploy used
 def load_model(model_file):
     loaded_model = joblib.load(open(os.path.join(model_file), "rb"))
     return loaded_model

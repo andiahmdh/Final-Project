@@ -11,8 +11,8 @@ import seaborn as sns
 import plotly.express as px
 
 
-@st.cache_data  # this is for local host used
-# @st.cache  # -> this is for deploy used
+#@st.cache_data  # this is for local host used
+@st.cache  # -> this is for deploy used
 def load_data(data):
     df = pd.read_csv(data)
     df = df.iloc[:, 1:]

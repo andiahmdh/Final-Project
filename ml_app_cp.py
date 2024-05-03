@@ -320,7 +320,7 @@ def run_ml_app():
     single_sample = np.array(encoded_result).reshape(1, -1)
     st.write(single_sample)
 
-    model = load_model("RF_model.pkl")
+    model = load_model("LGBRmodel.pkl")
 
     prediction = model.predict(single_sample)
     # pred_proba = model.predict_proba(single_sample)

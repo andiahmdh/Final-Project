@@ -8,7 +8,7 @@ html_temp = """
             
             <div style="padding:10px; background-color:#3872fb; border-radius:10px;">
                 <h1 style="color:white">Car Prediction App</h1>
-                <h4 style= "color:white">This Website Created By Andi Ahmad Haidir</h4>
+                <h4 style= "color:white">This Website Created by Andi Ahmad Haidir</h4>
             </div>
             """
 

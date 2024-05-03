@@ -48,13 +48,14 @@ def run_eda_app():
         col1, col2 = st.columns([2, 1])
 
         with col1:
-            with st.expander("Dist Plot of Top Manufacturer"):
+            with st.expander("Top 10 Manufacturer"):
                 # fig = plt.figure()
                 # sns.countplot(x=df['gender'])
                 # st.pyplot(fig)
 
                 man_df = df["manufacturer"].value_counts().to_frame()
                 man_df = man_df.reset_index()
+                man_df = man_df.iloc[:10]
                 man_df.columns = ["Manufacturer Type", "Counts"]
                 # st.dataframe(gen_df)
 
@@ -62,13 +63,16 @@ def run_eda_app():
                 st.plotly_chart(p1, use_container_width=True)
 
         with col2:
-            with st.expander("Top Cars Category"):
+            with st.expander("Top 10 Category"):
                 st.dataframe(df["category"].value_counts().to_frame())
 
         with st.expander("Frequency of Car Atributes"):
+            x = df["model"].value_counts().reset_index()
+            x = x.iloc[:10,1]
+            y = x.iloc[:10,2]
             p2 = px.bar(
                 df,
-                x=df["model"].value_counts().index,
+                x=,
                 y=df["model"].value_counts().values,
             )
             st.plotly_chart(p2)

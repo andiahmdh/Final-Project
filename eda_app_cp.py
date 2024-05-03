@@ -68,12 +68,12 @@ def run_eda_app():
 
         with st.expander("Frequency of Car Atributes"):
             x = df["model"].value_counts().reset_index()
-            x = x.iloc[:10,1]
-            y = x.iloc[:10,2]
+            x = x.iloc[:10,0]
+            y = x.iloc[:10,1]
             p2 = px.bar(
                 df,
-                x=,
-                y=df["model"].value_counts().values,
+                x=x,
+                y=y,
             )
             st.plotly_chart(p2)
             p3 = px.bar(
